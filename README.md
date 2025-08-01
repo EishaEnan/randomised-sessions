@@ -34,7 +34,7 @@ The card values are mapped to time using simple algebraic formulas to ensure you
 
 </div>
 
-_Where $C_S$ is the card value for the study session._
+Where $C_S$ is the card value for the study session.
 
 
 - **Break Duration (B):** Your break will be between 10 and 20 minutes.
@@ -45,7 +45,7 @@ _Where $C_S$ is the card value for the study session._
 
 </div>
 
-_Where $C_B$ is the card value for the break._
+Where $C_B$ is the card value for the break.
 
 
 ## 🚀 Getting Started
