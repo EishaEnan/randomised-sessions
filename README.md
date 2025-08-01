@@ -8,9 +8,9 @@ The project is based on a simple concept:
 1. Draw a card from a deck to determine your study session length.
 2. Draw another card to determine your break length.
 
-The card values are mapped to time using simple algebraic formulas to ensure your sessions and breaks fall within a healthy range. **The final calculated duration is rounded to the nearest multiple of 5 minutes.**
+The card values are mapped to time using simple algebraic formulas to ensure your sessions and breaks fall within a healthy range. **The final calculated duration is rounded to the nearest multiple of 5 minutes** for simplicity.
 
-### Card Value Mapping
+### ♦️ Card Value Mapping
 
 <div align="center">
 
@@ -24,15 +24,29 @@ The card values are mapped to time using simple algebraic formulas to ensure you
 
 </div>
 
-### Formulas
+### 🔢 Formulas
 
-* **Study Session ($S$):** Your session will be between 45 and 100 minutes.
-    $$S = 45 + (C_S - 1) \times 4.23$$
-    *Where* $C_S$ *is the card value for the study session.*
+- **Study Session (S):** Your session will be between 45 and 100 minutes.
 
-* **Break Duration ($B$):** Your break will be between 10 and 20 minutes.
-    $$B = 10 + (C_B - 1) \times 0.83$$
-    *Where* $C_B$ *is the card value for the break.*
+<div align="center">
+
+<b>S</b> = 45 + ($C_S$ − 1) × 4.23
+
+</div>
+
+_Where $C_S$ is the card value for the study session._
+
+
+- **Break Duration (B):** Your break will be between 10 and 20 minutes.
+
+<div align="center">
+
+<b>B</b> = 10 + ($C_B$ − 1) × 0.83
+
+</div>
+
+_Where $C_B$ is the card value for the break._
+
 
 ## 🚀 Getting Started
 
