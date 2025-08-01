@@ -1,6 +1,16 @@
 # 🃏 Study Session Card Draw
 
-A fun and simple Python script to gamify your study sessions. Draw a card from a standard deck to determine your study duration and your break duration, making your study routine unpredictable and engaging.
+A fun and lightweight Python + web project to **gamify your study routine** using a deck of cards. Let chance decide your focus and break durations — with a clean web UI powered by AWS Lambda.
+
+## 📦 Project Structure
+
+| Path                 | Purpose                          |
+|----------------------|----------------------------------|
+| `frontend/`          | Single-page UI (HTML + Tailwind) |
+| `lambda/`            | AWS Lambda backend (Python)      |
+| `randomised_sessions.py` | Local Python script (CLI use)     |
+
+---
 
 ## 📖 How it Works
 
@@ -12,7 +22,6 @@ The card values are mapped to time using simple algebraic formulas to ensure you
 
 ### ♦️ Card Value Mapping
 
-<div align="center">
 
 | Card  | Value |
 |-------|-------|
@@ -21,8 +30,6 @@ The card values are mapped to time using simple algebraic formulas to ensure you
 | Jack  | 11    |
 | Queen | 12    |
 | King  | 13    |
-
-</div>
 
 ### 🔢 Formulas
 
@@ -47,9 +54,27 @@ Where $C_S$ is the card value for the study session.
 
 Where $C_B$ is the card value for the break.
 
+## 🌐 Web App (Hosted via S3 + Lambda)
 
-## 🚀 Getting Started
+A responsive single-page app (SPA) with Tailwind UI and card image previews.
 
+- Calls AWS Lambda via API Gateway.
+- Gets card name + suit + calculated durations.
+- Dynamically fetches card images using:  
+  `https://deckofcardsapi.com/static/img/{CODE}.png`
+
+### Try it locally
+
+```bash
+open frontend/index.html
+```
+
+Or check the live version:  
+🔗 `https://study.eishaenan.com`
+
+---
+
+## 🐍 Run Locally (CLI Version)
 ### Prerequisites
 
 You only need Python installed on your computer.
@@ -77,7 +102,27 @@ Your session will be: 75.0 minutes.
 Your break card is: Queen!
 Your break will be: 20.0 minutes.
 ```
+---
 
+## ☁️ Lambda Backend
+
+The Lambda function (see `lambda/lambda_function.py`) returns JSON:
+
+```json
+{
+  "study_card_name": "Jack",
+  "study_card_suit": "Spades",
+  "study_duration": 90.0,
+  "break_card_name": "3",
+  "break_card_suit": "Hearts",
+  "break_duration": 10.0
+}
+```
+
+It does **not** fetch images — only calculates values.  
+The frontend handles the display and image loading.
+
+---
 ## 📜 License
 
 This project is licensed under the [MIT License](LICENSE).
