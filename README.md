@@ -70,7 +70,7 @@ open frontend/index.html
 ```
 
 Or check the live version:  
-🔗 `https://study.eishaenan.com`
+🔗 [https://study.eishaenan.com](https://study.eishaenan.com)
 
 ---
 
